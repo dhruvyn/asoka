@@ -1,0 +1,16 @@
+# Slack
+slack-bolt==1.21.3
+slack-sdk==3.34.0
+
+# Salesforce
+simple-salesforce==1.12.6
+
+# LLM
+anthropic==0.52.0
+
+# Semantic store
+chromadb>=1.5.5
+sentence-transformers==3.4.1
+
+# Utilities
+python-dotenv>=1.1.0

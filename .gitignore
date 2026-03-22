@@ -1,0 +1,43 @@
+# Environment
+.env
+*.env
+
+# Database (runtime state — do not commit)
+*.db
+*.db-shm
+*.db-wal
+
+# ChromaDB (large vector store — do not commit)
+chroma_store/
+test_chroma_store/
+
+# Installed packages (should not be in the repo)
+dotenv/
+python_dotenv-1.2.2.dist-info/
+bin/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

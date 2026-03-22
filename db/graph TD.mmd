@@ -1,0 +1,49 @@
+erDiagram
+    objects ||--o{ fields : "object_api_name"
+    role_hierarchy ||--o{ role_hierarchy : "parent_role_id"
+
+    objects {
+        string api_name PK "auto-index: (api_name)"
+        string label
+        boolean is_custom
+        datetime last_synced_at
+    }
+
+    fields {
+        string object_api_name FK "explicit index"
+        string field_api_name PK "composite PK auto-index"
+        string label
+        string data_type
+        boolean is_required
+        boolean is_editable
+        boolean is_custom
+        boolean is_deprecated
+        string description
+        json picklist_values
+        string reference_to
+        string relationship_name
+    }
+
+    relationships {
+        string parent_object PK "3-column composite PK"
+        string child_object PK "auto-index covers all 3"
+        string field_api_name PK 
+        string relationship_type
+        string relationship_name
+    }
+
+    validation_rules {
+        string rule_id PK
+        string object_api_name
+        string rule_name
+        boolean active
+        string description
+        string error_message
+        string formula
+    }
+
+    role_hierarchy {
+        string role_id PK
+        string role_name
+        string parent_role_id FK "self-referencing (tree structure)"
+    }
